@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="nova2pay" frontName="nova2pay">
+            <module name="Magento_NovaTwoPay" />
+        </route>
+    </router>
+</config>

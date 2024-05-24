@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="nova_two_pay" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Nova2Pay</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <comment>This controls the description which the user sees during checkout.</comment>
+                </field>
+                <field id="Description" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="Sandbox" translate="label comment" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" type="select">
+                    <label>Sandbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Place the payment gateway in development mode.</comment>
+                </field>
+                <field id="AccountID" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account ID</label>
+                    <comment>This is the Account ID, received from Payment Gateway.</comment>
+                </field>
+                <field id="MD5Cert" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>MD5 Cert</label>
+                    <comment>This is the MD5 Cert, received from Payment Gateway.</comment>
+                </field>
+                <field id="RSAPublicKey" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>RSA PublicKey</label>
+                    <comment>This is the RSA PublicKey, received from Payment Gateway.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
