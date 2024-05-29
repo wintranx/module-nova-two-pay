@@ -84,7 +84,7 @@ define(
                 // 发送AJAX请求
                 $.ajax({
                     type: 'POST',
-                    url: "http://nova-magento.com/nova2pay/payment/novapayment",
+                    url: "/nova2pay/payment/novapayment",
                     // url: "http://nova-magento.com/nova2pay/payment/payment",
                     data: data,
                     success: function (response) {
