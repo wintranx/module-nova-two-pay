@@ -4,18 +4,11 @@ namespace Magento\NovaTwoPay\Controller\Payment;
 
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\App\CsrfAwareActionInterface;
-use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\App\Request\InvalidRequestException;
-use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\CouldNotSaveException;
-use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\UrlInterface;
-use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 
 
 /**
@@ -202,24 +195,9 @@ class NovaPayment extends \Magento\Framework\App\Action\Action
 
 		if($result['resultCode'] == '10000') {
 
-//			$resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-//			$resultRedirect->setUrl($url);
-//			return $resultRedirect;
-
 			$url = $result['checkoutUrl'];
 			$res_return->setData(['code' => 200,'url' => $url]);
 			return $res_return;
-
-			//修改订单表  应付金额 和 实际支付金额
-//            $order = $payment->getOrder();
-//            $payAmountNum = $myorder['amount']['value'];
-//            $order->setTotalPaid($payAmountNum);
-//            $order->setBaseTotalPaid($payAmountNum);
-//            $order->setGrandTotal($payAmountNum);
-//            $order->setBaseGrandTotal($payAmountNum);
-//
-//            // 保存订单和支付信息
-//            $order->save();
 		} else {
 
 			throw new CouldNotSaveException(
